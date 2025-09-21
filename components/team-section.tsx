@@ -30,16 +30,13 @@ interface TeamSectionProps {
   className?: string
 }
 
-
-
 const coreMembers: TeamMember[] = [
   {
     id: "1",
     name: "Mrs. E Pravalika",
     role: "Faculty Coordinator",
-    
     branch: "AIML",
-    bio: "Leading the club’s vision and strategic initiatives in aerospace innovation, with a strong passion for sustainable aviation and space exploration technologies."
+    bio: "Leading the club's vision and strategic initiatives in aerospace innovation, with a strong passion for sustainable aviation and space exploration technologies."
   },
   {
     id: "2",
@@ -97,7 +94,7 @@ const coreMembers: TeamMember[] = [
     branch: "CSE",
     bio: "Leading design initiatives and creating visual content for aerospace projects."
   },
-{
+  {
     id: "9",
     name: "R Satya Sri Varsha",
     role: "Design Head",
@@ -105,77 +102,75 @@ const coreMembers: TeamMember[] = [
     branch: "CSE-DS",
     bio: "Leading design initiatives and creating visual content for aeronautics projects."
   },
- 
 ]
 
 const subcoreMembers: TeamMember[] = [
   {
     id: "10",
     name: "Minnekanti Sai Sree Harsha",
-    role: " Team Lead & Frontend Architect",
+    role: "Team Lead & Frontend Architect",
     year: "3rd",
     branch: "CSE",
-    bio: " Crafting exceptional user experiences and leading frontend development initiatives for aerospace web solutions."
+    bio: "Crafting exceptional user experiences and leading frontend development initiatives for aerospace web solutions."
   },
   {
     id: "11",
     name: "Aparna",
-    role: " Backend Systems Engineer",
+    role: "Backend Systems Engineer",
     year: "3rd",
     branch: "CSE",
-    bio: "🔧 Building robust backend infrastructure and APIs for aerospace data analysis and flight simulation systems."
+    bio: "Building robust backend infrastructure and APIs for aerospace data analysis and flight simulation systems."
   },
   {
     id: "12",
     name: "M V Abhiram",
-    role: " Backend Developer",
+    role: "Backend Developer",
     year: "3rd",
     branch: "AIML",
-    bio: "💻 Creating end-to-end solutions bridging frontend and backend for aerospace project management tools."
+    bio: "Creating end-to-end solutions bridging frontend and backend for aerospace project management tools."
   },
   {
     id: "13",
     name: "Talasila Sathvika",
-    role: " Cybersecurity Specialist",
+    role: "Cybersecurity Specialist",
     year: "3rd",
     branch: "CSE",
     bio: "Specializing in cybersecurity and creating end-to-end solutions that bridge frontend and backend systems for aerospace project management tools."
   },
-  
 ]
 
 const regularMembers: TeamMember[] = [
   {
     id: "14",
     name: "Talasila Sathvika",
-    role: " Student Coordinator",
+    role: "Student Coordinator",
     year: "3rd",
     branch: "CSE",
-    bio: " Coordinating research activities and eager to learn AI applications in aerospace technology."
+    bio: "Coordinating research activities and eager to learn AI applications in aerospace technology."
   },
   {
     id: "15",
     name: "M V Abhiram",
-    role: " Student Coordinator",
+    role: "Student Coordinator",
     year: "3rd",
     branch: "AIML",
-    bio: " Coordinating research activities and eager to learn AI applications in aerospace technology."
+    bio: "Coordinating research activities and eager to learn AI applications in aerospace technology."
   },
   {
     id: "16",
     name: "Kommu Tejasri",
-    role: " Student Coordinator ",
+    role: "Student Coordinator",
     year: "2nd",
     branch: "CSE",
-    bio: " Organizing workshops and events while exploring structural engineering applications in aerospace."
+    bio: "Organizing workshops and events while exploring structural engineering applications in aerospace."
   },
   {
     id: "17",
     name: "Arutla Karthikeya Reddy",
-    role: " Student Coordinator",
+    role: "Student Coordinator",
     year: "2nd",
     branch: "ECE",
-    bio: " Coordinating research activities and eager to learn AI applications in aerospace technology."
+    bio: "Coordinating research activities and eager to learn AI applications in aerospace technology."
   }
 ]
 
@@ -185,7 +180,6 @@ export function TeamSection({ title, subtitle, icon: Icon, sectionType, classNam
 
   const getMembers = () => {
     switch (sectionType) {
-      case "faculty": return facultyMembers
       case "core": return coreMembers
       case "subcore": return subcoreMembers
       case "members": return regularMembers
@@ -203,108 +197,169 @@ export function TeamSection({ title, subtitle, icon: Icon, sectionType, classNam
   const availableYears = [...new Set(members.map(m => m.year).filter(Boolean))].sort()
   const availableBranches = [...new Set(members.map(m => m.branch).filter(Boolean))].sort()
 
+  const getSectionColors = () => {
+    switch (sectionType) {
+      case "faculty": return {
+        headerBg: "from-purple-900/20 via-indigo-900/20 to-blue-900/20",
+        cardBorder: "hover:border-purple-400/50",
+        cardBg: "from-purple-900/10 to-indigo-900/10",
+        badgeBg: "bg-purple-500/20 text-purple-200 border-purple-400/30"
+      }
+      case "core": return {
+        headerBg: "from-cyan-900/20 via-blue-900/20 to-indigo-900/20", 
+        cardBorder: "hover:border-cyan-400/50",
+        cardBg: "from-cyan-900/10 to-blue-900/10",
+        badgeBg: "bg-cyan-500/20 text-cyan-200 border-cyan-400/30"
+      }
+      case "subcore": return {
+        headerBg: "from-blue-900/20 via-indigo-900/20 to-purple-900/20",
+        cardBorder: "hover:border-blue-400/50", 
+        cardBg: "from-blue-900/10 to-indigo-900/10",
+        badgeBg: "bg-blue-500/20 text-blue-200 border-blue-400/30"
+      }
+      default: return {
+        headerBg: "from-emerald-900/20 via-teal-900/20 to-cyan-900/20",
+        cardBorder: "hover:border-emerald-400/50",
+        cardBg: "from-emerald-900/10 to-teal-900/10", 
+        badgeBg: "bg-emerald-500/20 text-emerald-200 border-emerald-400/30"
+      }
+    }
+  }
+
+  const colors = getSectionColors()
+
   return (
-    <section className={className}>
+    <section className={cn("py-16 bg-[#070e17]", className)}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <div className="p-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full mr-4 shadow-lg">
-              <Icon className="h-8 w-8 text-primary" />
+          <div className="flex items-center justify-center mb-6">
+            <div className={cn("p-3 rounded-xl mr-4 border backdrop-blur-sm bg-gradient-to-br", colors.headerBg, colors.cardBorder.replace('hover:', ''))}>
+              <Icon className="h-8 w-8 text-cyan-400" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               {title}
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
+        {/* Filters */}
         {(sectionType === "subcore" || sectionType === "members") && (
-          <div className="flex gap-4 justify-center mb-8">
+          <div className="flex gap-4 justify-center mb-8 flex-wrap">
             <Select value={selectedYear} onValueChange={setSelectedYear}>
-              <SelectTrigger className="w-40">
+              <SelectTrigger className="w-40 bg-slate-800/50 border-slate-600 text-slate-200">
                 <SelectValue placeholder="Year" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Years</SelectItem>
+              <SelectContent className="bg-slate-800 border-slate-600">
+                <SelectItem value="all" className="text-slate-200">All Years</SelectItem>
                 {availableYears.map(year => (
-                  <SelectItem key={year} value={year}>{year} Year</SelectItem>
+                  <SelectItem key={year} value={year} className="text-slate-200">{year} Year</SelectItem>
                 ))}
               </SelectContent>
             </Select>
+            
             <Select value={selectedBranch} onValueChange={setSelectedBranch}>
-              <SelectTrigger className="w-40">
+              <SelectTrigger className="w-40 bg-slate-800/50 border-slate-600 text-slate-200">
                 <SelectValue placeholder="Branch" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Branches</SelectItem>
+              <SelectContent className="bg-slate-800 border-slate-600">
+                <SelectItem value="all" className="text-slate-200">All Branches</SelectItem>
                 {availableBranches.map(branch => (
-                  <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                  <SelectItem key={branch} value={branch} className="text-slate-200">{branch}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
+            
             {(selectedYear !== "all" || selectedBranch !== "all") && (
-              <Button variant="outline" onClick={() => {setSelectedYear("all"); setSelectedBranch("all")}}>
+              <Button 
+                variant="outline" 
+                onClick={() => {setSelectedYear("all"); setSelectedBranch("all")}}
+                className="bg-slate-800/50 border-slate-600 text-slate-200 hover:bg-slate-700"
+              >
                 Clear
               </Button>
             )}
           </div>
         )}
 
+        {/* Team Grid */}
         <div className={cn("grid gap-6", 
-          sectionType === "faculty" ? "grid-cols-1 sm:grid-cols-2" :
-          sectionType === "core" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
+          sectionType === "faculty" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
+          sectionType === "core" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" :
           "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         )}>
           {filteredMembers.map((member) => (
-            <Card key={member.id} className="group hover:shadow-2xl transition-all duration-500 border-2 hover:border-primary/30 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-md overflow-hidden hover:-translate-y-2">
+            <Card 
+              key={member.id} 
+              className={cn("group transition-all duration-300 border-slate-700/50 bg-slate-900/50 hover:shadow-xl backdrop-blur-sm", colors.cardBorder, "hover:-translate-y-1")}
+            >
               <CardContent className="p-0">
-                <div className="relative h-48 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 flex items-center justify-center overflow-hidden">
+                
+                {/* Avatar Section */}
+                <div className={cn("relative h-48 flex items-center justify-center bg-gradient-to-br", colors.cardBg)}>
                   {member.image ? (
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                    />
                   ) : (
-                    <div className="relative">
-                      <User className="h-20 w-20 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
-                      <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="p-4 bg-white/10 rounded-full backdrop-blur-sm">
+                      <User className="h-16 w-16 text-white/80" />
                     </div>
                   )}
+                  
+                  {/* Bio Overlay */}
                   {member.bio && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/90 to-primary/80 p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-white text-sm text-center leading-relaxed font-medium">{member.bio}</p>
+                    <div className="absolute inset-0 bg-slate-900/95 p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-white text-sm text-center leading-relaxed">{member.bio}</p>
                     </div>
                   )}
                 </div>
+
+                {/* Content Section */}
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                     {member.name}
                   </h3>
-                  <Badge variant="secondary" className={cn("mb-3 font-semibold",
-                    sectionType === "faculty" ? "bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 border-purple-200" :
-                    sectionType === "core" ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary border-primary/30" :
-                    sectionType === "subcore" ? "bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 border-blue-200" :
-                    "bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border-green-200"
-                  )}>
+                  
+                  <Badge className={cn("mb-3 font-medium", colors.badgeBg)}>
                     {member.role}
                   </Badge>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {member.year && <Badge variant="outline" className="text-xs">{member.year} Year</Badge>}
-                    {member.branch && <Badge variant="outline" className="text-xs">{member.branch}</Badge>}
-                    {member.department && <Badge variant="outline" className="text-xs">{member.department}</Badge>}
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {member.year && (
+                      <Badge variant="outline" className="text-xs border-slate-600 text-slate-300">
+                        {member.year} Year
+                      </Badge>
+                    )}
+                    {member.branch && (
+                      <Badge variant="outline" className="text-xs border-slate-600 text-slate-300">
+                        {member.branch}
+                      </Badge>
+                    )}
                   </div>
+                  
+                  {/* Social Links */}
                   <div className="flex gap-2">
                     {member.email && (
-                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-primary/10" asChild>
-                        <a href={`mailto:${member.email}`}><Mail className="h-4 w-4" /></a>
+                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-cyan-500/20 hover:text-cyan-300" asChild>
+                        <a href={`mailto:${member.email}`}>
+                          <Mail className="h-4 w-4" />
+                        </a>
                       </Button>
                     )}
                     {member.linkedin && (
-                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-primary/10" asChild>
+                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-blue-500/20 hover:text-blue-300" asChild>
                         <a href={`https://linkedin.com/in/${member.linkedin}`} target="_blank" rel="noopener noreferrer">
                           <Linkedin className="h-4 w-4" />
                         </a>
                       </Button>
                     )}
                     {member.github && (
-                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-primary/10" asChild>
+                      <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:bg-purple-500/20 hover:text-purple-300" asChild>
                         <a href={`https://github.com/${member.github}`} target="_blank" rel="noopener noreferrer">
                           <Github className="h-4 w-4" />
                         </a>
@@ -316,9 +371,20 @@ export function TeamSection({ title, subtitle, icon: Icon, sectionType, classNam
             </Card>
           ))}
         </div>
+
+        {/* Empty State */}
         {filteredMembers.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">No members found matching the selected filters.</p>
+            <User className="h-16 w-16 text-slate-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-slate-300 mb-2">No members found</h3>
+            <p className="text-slate-400 mb-4">Try adjusting your filters to see more results.</p>
+            <Button 
+              variant="outline" 
+              onClick={() => {setSelectedYear("all"); setSelectedBranch("all")}}
+              className="bg-slate-800/50 border-slate-600 text-slate-200 hover:bg-slate-700"
+            >
+              Reset Filters
+            </Button>
           </div>
         )}
       </div>

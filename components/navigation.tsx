@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, Rocket } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -74,14 +73,10 @@ export function Navigation() {
                 />
               </Link>
             ))}
-            <div className="ml-4">
-              <ThemeToggle />
-            </div>
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="flex items-center space-x-2 lg:hidden">
-            <ThemeToggle />
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="relative">

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Target, Eye, Users, Rocket, Award, Globe } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AboutPage() {
   return (
@@ -72,8 +73,15 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="w-full aspect-[4/3] rounded-2xl bg-slate-800 border-2 border-cyan-500/30 flex items-center justify-center p-8 text-center text-cyan-500 text-lg font-bold">
-                <p>No Image</p>
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <Image
+              src="/ourmission.png"
+              alt="Our Mission"
+              width={500}
+              height={300}
+              className="rounded-lg object-contain shadow-lg"
+              priority
+            />
               </div>
             </div>
           </div>
@@ -81,9 +89,16 @@ export default function AboutPage() {
           {/* Vision */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="w-full aspect-[4/3] rounded-2xl bg-slate-800 border-2 border-green-500/30 flex items-center justify-center p-8 text-center text-green-500 text-lg font-bold">
-                <p>No Image</p>
-              </div>
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/ourvision.jpg"
+                alt="Our Vision"
+                width={500}
+                height={300}
+                className="rounded-lg object-contain shadow-lg"
+                priority
+              />
+            </div>
             </div>
             <div>
               <div className="flex items-center mb-6">

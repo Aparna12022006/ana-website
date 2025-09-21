@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Badge } from "@/components/ui/badge"
@@ -160,16 +161,15 @@ export default function RDWingPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="p-6 bg-primary/20 rounded-full w-fit mx-auto">
-                    <Rocket className="h-16 w-16 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">R&D Innovation Lab</h3>
-                    <p className="text-muted-foreground">Where ideas become reality</p>
-                  </div>
-                </div>
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/rdwing.png"
+                  alt="R&D Wing Innovation Lab"
+                  width={800}
+                  height={600}
+                  className="rounded-lg object-contain shadow-lg"
+                  priority
+                />
               </div>
             </div>
           </div>
