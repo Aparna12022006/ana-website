@@ -16,14 +16,21 @@ interface Member {
 
 const keyMembers: Member[] = [
   {
-  id: "1",
+    id: "1",
+    name: "Dr. A. Nageshwara Rao",
+    role: "Head of the Department",
+    description: "Guiding the department with expertise in Artificial Intelligence and Machine Learning, fostering innovation, research, and academic excellence.",
+    branch: "AIML",
+},
+  {
+  id: "2",
   name: "Mrs. E Pravalika",
   role: "Faculty Coordinator",
   description: "Guiding the club with mentorship, academic expertise, and professional insights.",
   branch: "CSE-AIML",
 },
   {
-    id: "2",
+    id: "3",
     name: "Marella Gagan Hari Kiran",
     role: "Chairman",
     description: "Leading the club's vision and strategic initiatives in aerospace innovation.",
@@ -31,7 +38,7 @@ const keyMembers: Member[] = [
     branch: "CSE-AIML",
   },
   {
-    id: "3",
+    id: "4",
     name: "P. Sri Ram Pranav",
     role: "Vice Chairman",
     description: "Coordinating technical projects and research collaborations.",
@@ -39,7 +46,7 @@ const keyMembers: Member[] = [
     branch: "CSE",
   },
   {
-    id: "4",
+    id: "5",
     name: "V Sandhya",
     role: "Technical Lead",
     description: "Overseeing R&D projects and technical workshops.",
@@ -47,7 +54,7 @@ const keyMembers: Member[] = [
     branch: "CSE",
   },
   {
-    id: "5",
+    id: "6",
     name: "B Saketh Rao",
     role: "General Secretary",
     description: "Managing club operations and member communications.",
@@ -55,7 +62,7 @@ const keyMembers: Member[] = [
     branch: "CSE",
   },
   {
-    id: "6",
+    id: "7",
     name: "M Varshitha Verma",
     role: "Treasurer",
     description: "Financial planning and resource management for club activities.",
@@ -63,7 +70,7 @@ const keyMembers: Member[] = [
     branch: "CSE",
   },
   {
-    id: "7",
+    id: "8",
     name: "N Akash Reddy",
     role: "PR, Media & Outreach",
     description: "Managing social media presence and external communications.",
@@ -71,21 +78,30 @@ const keyMembers: Member[] = [
     branch: "CSE-AIML",
   },
   {
-    id: "8",
-    name: "K Keerthana, Varsha",
+    id: "9",
+    name: "K Keerthana, R Varsha",
     role: "Design Leads",
     description: "Leading design initiatives and creative direction.",
     year: "3rd Year",
     branch: "CSE",
   },
   {
-    id: "9",
-    name: "M Sai Sree Harsha(Team Lead), Aparna, Abhiram, Sathvika",
+    id: "10",
+    name: "M Sai Sree Harsha (Team Lead), D Aparna, M V Abhiram, T Sathvika",
     role: "Web Development Team",
     description: "Building and maintaining the club's web presence.",
     year: "3rd Year",
     branch: "CSE, AIML",
   },
+  {
+    id: "11",
+    name: "T Sathvika, M V Abhiram, K Tejasri, A Karthikeya Reddy",
+    role: "Student Coordinators",
+    description: "Assisting in club activities, organizing events, and coordinating between faculty and students.",
+    year: "3rd,2nd Years",
+    branch: "CSE, AIML, ECE",
+},
+
 ]
 
 export function MemberShowcase() {

@@ -1,11 +1,11 @@
 "use client"
-
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Rocket } from "lucide-react"
+import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
@@ -38,11 +38,15 @@ export function Navigation() {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <Rocket className="h-8 w-8 text-primary group-hover:text-secondary transition-colors duration-300" />
-              <div className="absolute inset-0 bg-secondary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative h-10 w-10">
+              <Image
+                src="/club_logo.png"
+                alt="A&A Club Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold font-serif bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -87,7 +91,14 @@ export function Navigation() {
               <SheetContent side="right" className="w-80 bg-background/95 backdrop-blur-md">
                 <div className="flex items-center justify-between mb-8">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Rocket className="h-8 w-8 text-primary" />
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src="/club_logo.jpg"
+                        alt="A&A Club Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                     <span className="text-xl font-bold font-serif bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       A&A Club
                     </span>

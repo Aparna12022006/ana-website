@@ -33,13 +33,21 @@ interface TeamSectionProps {
 const coreMembers: TeamMember[] = [
   {
     id: "1",
+    name: "Dr. A. Nageshwara Rao",
+    role: "Head of the Department",
+    branch: "AIML",
+    bio: "Guiding the department with expertise in Artificial Intelligence and Machine Learning, fostering innovation, research, and academic excellence."
+},
+
+  {
+    id: "2",
     name: "Mrs. E Pravalika",
     role: "Faculty Coordinator",
     branch: "AIML",
     bio: "Leading the club's vision and strategic initiatives in aerospace innovation, with a strong passion for sustainable aviation and space exploration technologies."
   },
   {
-    id: "2",
+    id: "3",
     name: "Marella Gagan Hari Kiran",
     role: "Chairman",
     year: "3rd",
@@ -47,7 +55,7 @@ const coreMembers: TeamMember[] = [
     bio: "Leading the club's vision and strategic initiatives in aerospace innovation. Passionate about sustainable aviation and space exploration technologies."
   },
   {
-    id: "3",
+    id: "4",
     name: "Prayaga Sri Ram Pranav",
     role: "Vice Chairman",
     year: "3rd",
@@ -55,7 +63,7 @@ const coreMembers: TeamMember[] = [
     bio: "Coordinating technical projects and research collaborations. Specializes in propulsion systems and aerodynamics."
   },
   {
-    id: "4",
+    id: "5",
     name: "Viswanadhapalli Sandhya",
     role: "Technical Lead",
     year: "3rd",
@@ -63,7 +71,7 @@ const coreMembers: TeamMember[] = [
     bio: "Overseeing R&D projects and technical workshops. Expert in aircraft design and computational fluid dynamics."
   },
   {
-    id: "5",
+    id: "6",
     name: "B Saketh Rao",
     role: "General Secretary",
     year: "3rd",
@@ -71,7 +79,7 @@ const coreMembers: TeamMember[] = [
     bio: "Managing club operations and member communications. Developing digital solutions for aerospace applications."
   },
   {
-    id: "6",
+    id: "7",
     name: "Muthineni Varshitha Verma",
     role: "Treasurer",
     year: "3rd",
@@ -79,7 +87,7 @@ const coreMembers: TeamMember[] = [
     bio: "Financial planning and resource management for club activities. Working on avionics and control systems."
   },
   {
-    id: "7",
+    id: "8",
     name: "N Akash Reddy",
     role: "PR, Media & Outreach",
     year: "3rd",
@@ -87,7 +95,7 @@ const coreMembers: TeamMember[] = [
     bio: "Managing social media presence and external communications. Creating engaging content about aerospace innovations."
   },
   {
-    id: "8",
+    id: "9",
     name: "K Keerthana",
     role: "Design Head",
     year: "3rd",
@@ -95,7 +103,7 @@ const coreMembers: TeamMember[] = [
     bio: "Leading design initiatives and creating visual content for aerospace projects."
   },
   {
-    id: "9",
+    id: "10",
     name: "R Satya Sri Varsha",
     role: "Design Head",
     year: "2nd",
@@ -106,7 +114,7 @@ const coreMembers: TeamMember[] = [
 
 const subcoreMembers: TeamMember[] = [
   {
-    id: "10",
+    id: "11",
     name: "Minnekanti Sai Sree Harsha",
     role: "Team Lead & Frontend Architect",
     year: "3rd",
@@ -114,15 +122,15 @@ const subcoreMembers: TeamMember[] = [
     bio: "Crafting exceptional user experiences and leading frontend development initiatives for aerospace web solutions."
   },
   {
-    id: "11",
-    name: "Aparna",
+    id: "12",
+    name: "D Aparna",
     role: "Backend Systems Engineer",
     year: "3rd",
     branch: "CSE",
     bio: "Building robust backend infrastructure and APIs for aerospace data analysis and flight simulation systems."
   },
   {
-    id: "12",
+    id: "13",
     name: "M V Abhiram",
     role: "Backend Developer",
     year: "3rd",
@@ -130,7 +138,7 @@ const subcoreMembers: TeamMember[] = [
     bio: "Creating end-to-end solutions bridging frontend and backend for aerospace project management tools."
   },
   {
-    id: "13",
+    id: "14",
     name: "Talasila Sathvika",
     role: "Cybersecurity Specialist",
     year: "3rd",
@@ -141,7 +149,7 @@ const subcoreMembers: TeamMember[] = [
 
 const regularMembers: TeamMember[] = [
   {
-    id: "14",
+    id: "15",
     name: "Talasila Sathvika",
     role: "Student Coordinator",
     year: "3rd",
@@ -149,7 +157,7 @@ const regularMembers: TeamMember[] = [
     bio: "Coordinating research activities and eager to learn AI applications in aerospace technology."
   },
   {
-    id: "15",
+    id: "16",
     name: "M V Abhiram",
     role: "Student Coordinator",
     year: "3rd",
@@ -157,7 +165,7 @@ const regularMembers: TeamMember[] = [
     bio: "Coordinating research activities and eager to learn AI applications in aerospace technology."
   },
   {
-    id: "16",
+    id: "17",
     name: "Kommu Tejasri",
     role: "Student Coordinator",
     year: "2nd",
@@ -165,7 +173,7 @@ const regularMembers: TeamMember[] = [
     bio: "Organizing workshops and events while exploring structural engineering applications in aerospace."
   },
   {
-    id: "17",
+    id: "18",
     name: "Arutla Karthikeya Reddy",
     role: "Student Coordinator",
     year: "2nd",
